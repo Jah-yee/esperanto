@@ -79,7 +79,7 @@ stt = GroqSpeechToText(
 
 | Model | Context Window | Best For |
 |-------|----------------|----------|
-| **mixtral-8x7b-32768** | 32K tokens | Balanced performance, high quality |
+| **openai/gpt-oss-120b** | 128K tokens | Balanced performance, high quality |
 | **llama-3.3-70b-versatile** | 128K tokens | Latest Llama, versatile tasks |
 | **llama-3.1-70b-versatile** | 128K tokens | Previous Llama version |
 | **llama-3.1-8b-instant** | 128K tokens | Fast responses, cost-effective |
@@ -417,15 +417,15 @@ print(response.content)
 
 ## Model Selection Guide
 
-### Mixtral 8x7B
+### GPT-OSS-120B
 **Best for:** Balanced performance and quality
-- Excellent reasoning capabilities
+- Excellent reasoning capabilities (open-source, Apache 2.0) (open-source, Apache 2.0)
 - Good for complex tasks
-- 32K context window
+- 128K context window
 - Fast inference on Groq LPU
 
 ```python
-model = AIFactory.create_language("groq", "mixtral-8x7b-32768")
+model = AIFactory.create_language("groq", "openai/gpt-oss-120b")
 ```
 
 ### Llama 3.3 70B Versatile
@@ -485,7 +485,7 @@ transcriber = AIFactory.create_speech_to_text("groq", "distil-whisper-large-v3-e
 ### LLM Inference Speed
 Groq's LPU provides exceptional speed:
 - **Llama 3.1 8B**: 500+ tokens/second
-- **Mixtral 8x7B**: 300+ tokens/second
+- **GPT-OSS-120B**: 300+ tokens/second
 - **Llama 3.3 70B**: 200+ tokens/second
 
 ### Speech-to-Text Speed
@@ -495,7 +495,7 @@ Faster than traditional Whisper implementations:
 - **Distil-Whisper**: Fastest for English
 
 ### Context Windows
-- **Mixtral**: 32K tokens
+- **GPT-OSS-120B**: 128K tokens
 - **Llama 3.x**: 128K tokens
 - **Gemma**: 8K tokens
 
